@@ -180,7 +180,7 @@
       overflow:hidden;
       background:
         linear-gradient(90deg,rgba(26,20,17,.76),rgba(26,20,17,.28)),
-        url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=2000&q=85") center/cover;
+        url("E8CE3532-DD78-420D-B391-ABA7753A9D2F.jpeg") center/cover;
       color:#fff;
     }
 
@@ -473,7 +473,7 @@
     .gallery-grid{
       display:grid;
       grid-template-columns:2fr 1fr 1fr;
-      grid-template-rows:260px 260px;
+      grid-auto-rows:260px;
       gap:14px;
     }
 
@@ -483,7 +483,7 @@
     }
 
     .gallery-item:first-child{
-      grid-row:1 / 3;
+      grid-row:span 2;
     }
 
     .gallery-item img{
@@ -722,7 +722,7 @@
 
       .gallery-grid{
         grid-template-columns:1fr 1fr;
-        grid-template-rows:220px 160px 160px;
+        grid-auto-rows:160px;
       }
 
       .gallery-item:first-child{
@@ -841,8 +841,8 @@
 
       <div class="about-image">
         <img
-          src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1200&q=85"
-          alt="Праздничное пространство">
+          src="IMG_7589.jpeg"
+          alt="Пространство Družba Event Room">
       </div>
 
       <div class="about-copy">
@@ -1010,8 +1010,8 @@
 
           <div class="zone-image">
             <img
-              src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1000&q=85"
-              alt="Праздник">
+              src="IMG_8002.jpeg"
+              alt="День рождения">
           </div>
 
           <div class="zone-content">
@@ -1030,7 +1030,7 @@
 
           <div class="zone-image">
             <img
-              src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1000&q=85"
+              src="IMG_9170.jpeg"
               alt="Детский праздник">
           </div>
 
@@ -1050,7 +1050,7 @@
 
           <div class="zone-image">
             <img
-              src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1000&q=85"
+              src="IMG_7832.jpeg"
               alt="Встреча друзей">
           </div>
 
@@ -1093,49 +1093,37 @@
         <div class="amenity">
           <div class="amenity-icon">🍽️</div>
           <h3>Посуда</h3>
-          <p>
-            Посуда уже входит в стоимость аренды.
-          </p>
+          <p>Посуда уже входит в стоимость аренды.</p>
         </div>
 
         <div class="amenity">
           <div class="amenity-icon">🎵</div>
           <h3>Музыка</h3>
-          <p>
-            Есть колонка для музыки и создания атмосферы.
-          </p>
+          <p>Есть колонка для музыки и создания атмосферы.</p>
         </div>
 
         <div class="amenity">
           <div class="amenity-icon">☕</div>
           <h3>Кофеварка</h3>
-          <p>
-            Можно приготовить кофе для гостей.
-          </p>
+          <p>Можно приготовить кофе для гостей.</p>
         </div>
 
         <div class="amenity">
           <div class="amenity-icon">🫖</div>
           <h3>Чайник</h3>
-          <p>
-            Всё необходимое для горячих напитков.
-          </p>
+          <p>Всё необходимое для горячих напитков.</p>
         </div>
 
         <div class="amenity">
           <div class="amenity-icon">🍿</div>
           <h3>Микроволновка</h3>
-          <p>
-            Можно разогреть принесённые блюда.
-          </p>
+          <p>Можно разогреть принесённые блюда.</p>
         </div>
 
         <div class="amenity">
           <div class="amenity-icon">🧸</div>
           <h3>Игрушки</h3>
-          <p>
-            Различные игрушки для маленьких гостей.
-          </p>
+          <p>Различные игрушки для маленьких гостей.</p>
         </div>
 
       </div>
@@ -1164,37 +1152,27 @@
 
         <div class="idea">
           <h3>🎂 День рождения</h3>
-          <p>
-            Красивый праздник для друзей и семьи.
-          </p>
+          <p>Красивый праздник для друзей и семьи.</p>
         </div>
 
         <div class="idea">
           <h3>🧸 Детский праздник</h3>
-          <p>
-            Игрушки, сладкая вата и тематическая фотозона.
-          </p>
+          <p>Игрушки, сладкая вата и тематическая фотозона.</p>
         </div>
 
         <div class="idea">
           <h3>👨‍👩‍👧 Семейный праздник</h3>
-          <p>
-            Юбилей, семейная встреча или другой важный повод.
-          </p>
+          <p>Юбилей, семейная встреча или другой важный повод.</p>
         </div>
 
         <div class="idea">
           <h3>🥂 Встреча друзей</h3>
-          <p>
-            Уютная атмосфера для общения и отдыха.
-          </p>
+          <p>Уютная атмосфера для общения и отдыха.</p>
         </div>
 
       </div>
     </div>
   </section>
-
-  <!-- ГАЛЕРЕЯ С ТВОИМИ ФОТОГРАФИЯМИ -->
 
   <section class="section" id="gallery">
 
@@ -1220,35 +1198,35 @@
 
       <div class="gallery-grid">
 
-        <div class="gallery-item">
-          <img
-            src="IMG_8515.jpeg"
-            alt="Зал Družba Event Room">
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="IMG_8516.jpeg"
-            alt="Зал Družba Event Room">
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="IMG_8518.jpeg"
-            alt="Зал Družba Event Room">
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="IMG_8519.jpeg"
-            alt="Зал Družba Event Room">
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="IMG_8523.jpeg"
-            alt="Зал Družba Event Room">
-        </div>
+        <div class="gallery-item"><img src="IMG_7475.jpeg" alt="Družba Event Room"></div>
+        <div class="gallery-item"><img src="IMG_7553.jpeg" alt="Družba Event Room"></div>
+        <div class="gallery-item"><img src="IMG_7560.jpeg" alt="Družba Event Room"></div>
+        <div class="gallery-item"><img src="IMG_7579.jpeg" alt="Družba Event Room"></div>
+        <div class="gallery-item"><img src="IMG_7589.jpeg" alt="Družba Event Room"></div>
+        <div class="gallery-item"><img src="IMG_7763.jpeg" alt="Družba Event Room"></div>
+        <div class="gallery-item"><img src="IMG_7756.jpeg" alt="Družba Event Room"></div>
+        <div class="gallery-item"><img src="IMG_7826.jpeg" alt="Družba Event Room"></div>
+        <div class="gallery-item"><img src="IMG_7830.jpeg" alt="Družба Event Room"></div>
+        <div class="gallery-item"><img src="IMG_7839.jpeg" alt="Družba Event Room"></div>
+        <div class="gallery-item"><img src="IMG_7912.jpeg" alt="Družba Event Room"></div>
+        <div class="gallery-item"><img src="IMG_8134.jpeg" alt="Družba Event Room"></div>
+        <div class="gallery-item"><img src="IMG_8131.jpeg" alt="Družba Event Room"></div>
+        <div class="gallery-item"><img src="IMG_8247.jpeg" alt="Družba Event Room"></div>
+        <div class="gallery-item"><img src="IMG_8253.jpeg" alt="Družba Event Room"></div>
+        <div class="gallery-item"><img src="IMG_8520.jpeg" alt="Družba Event Room"></div>
+        <div class="gallery-item"><img src="IMG_8514.jpeg" alt="Družba Event Room"></div>
+        <div class="gallery-item"><img src="IMG_8629.jpeg" alt="Družba Event Room"></div>
+        <div class="gallery-item"><img src="45BBC2F5-40BB-43F4-800F-A4DF598A789D.jpeg" alt="Družba Event Room"></div>
+        <div class="gallery-item"><img src="IMG_9126.jpeg" alt="Družba Event Room"></div>
+        <div class="gallery-item"><img src="IMG_9146.jpeg" alt="Družba Event Room"></div>
+        <div class="gallery-item"><img src="IMG_9170.jpeg" alt="Družba Event Room"></div>
+        <div class="gallery-item"><img src="IMG_8522.jpeg" alt="Družba Event Room"></div>
+        <div class="gallery-item"><img src="D90F0E72-355E-4CA9-9C12-FEA05CA5AD3B.jpeg" alt="Družba Event Room"></div>
+        <div class="gallery-item"><img src="IMG_8266.jpeg" alt="Družba Event Room"></div>
+        <div class="gallery-item"><img src="IMG_8593.jpeg" alt="Družba Event Room"></div>
+        <div class="gallery-item"><img src="IMG_8612.jpeg" alt="Družba Event Room"></div>
+        <div class="gallery-item"><img src="IMG_8649.jpeg" alt="Družба Event Room"></div>
+        <div class="gallery-item"><img src="IMG_9157.jpeg" alt="Družba Event Room"></div>
 
       </div>
 
@@ -1299,17 +1277,11 @@
 
         <div class="socials">
 
-          <a
-            href="https://www.instagram.com/druzba.event.room/"
-            target="_blank"
-            rel="noopener noreferrer">
+          <a href="https://www.instagram.com/druzba.event.room/" target="_blank" rel="noopener noreferrer">
             Instagram
           </a>
 
-          <a
-            href="https://www.facebook.com/druzba.event.room/"
-            target="_blank"
-            rel="noopener noreferrer">
+          <a href="https://www.facebook.com/druzba.event.room/" target="_blank" rel="noopener noreferrer">
             Facebook
           </a>
 
@@ -1330,55 +1302,36 @@
         <div class="form-grid">
 
           <div class="field">
-
-            <label for="name">
-              Ваше имя *
-            </label>
-
+            <label for="name">Ваше имя *</label>
             <input
               id="name"
               name="name"
               type="text"
               placeholder="Например, Анна"
               required>
-
           </div>
 
           <div class="field">
-
-            <label for="phone">
-              Телефон *
-            </label>
-
+            <label for="phone">Телефон *</label>
             <input
               id="phone"
               name="phone"
               type="tel"
               placeholder="+372 ..."
               required>
-
           </div>
 
           <div class="field">
-
-            <label for="date">
-              Желаемая дата *
-            </label>
-
+            <label for="date">Желаемая дата *</label>
             <input
               id="date"
               name="date"
               type="date"
               required>
-
           </div>
 
           <div class="field">
-
-            <label for="guests">
-              Количество гостей
-            </label>
-
+            <label for="guests">Количество гостей</label>
             <input
               id="guests"
               name="guests"
@@ -1386,84 +1339,39 @@
               min="1"
               max="30"
               placeholder="До 30 человек">
-
           </div>
 
           <div class="field full">
-
-            <label for="event">
-              Тип мероприятия
-            </label>
+            <label for="event">Тип мероприятия</label>
 
             <select id="event" name="event">
-
-              <option value="">
-                Выберите вариант
-              </option>
-
-              <option>
-                День рождения
-              </option>
-
-              <option>
-                Детский праздник
-              </option>
-
-              <option>
-                Семейный праздник
-              </option>
-
-              <option>
-                Встреча друзей
-              </option>
-
-              <option>
-                Другое
-              </option>
-
+              <option value="">Выберите вариант</option>
+              <option>День рождения</option>
+              <option>Детский праздник</option>
+              <option>Семейный праздник</option>
+              <option>Встреча друзей</option>
+              <option>Другое</option>
             </select>
-
           </div>
 
           <div class="field full">
-
-            <label for="extras">
-              Дополнительные услуги
-            </label>
+            <label for="extras">Дополнительные услуги</label>
 
             <select id="extras" name="extras">
-
-              <option value="">
-                Не нужны
-              </option>
-
-              <option>
-                Фотозона -- 20 €
-              </option>
-
-              <option>
-                Сладкая вата -- 1 € / шт.
-              </option>
-
-              <option>
-                Фотозона + сладкая вата
-              </option>
-
+              <option value="">Не нужны</option>
+              <option>Фотозона -- 20 €</option>
+              <option>Сладкая вата -- 1 € / шт.</option>
+              <option>Фотозона + сладкая вата</option>
             </select>
-
           </div>
 
           <div class="field full">
-
-            <label for="message">
-              Комментарий
-            </label>
+            <label for="message">Комментарий</label>
 
             <textarea
               id="message"
               name="message"
               placeholder="Расскажите немного о вашем мероприятии..."></textarea>
-
           </div>
 
           <div class="field full">
@@ -1529,9 +1437,7 @@
   const today = new Date();
 
   const yyyy = today.getFullYear();
-
   const mm = String(today.getMonth() + 1).padStart(2, '0');
-
   const dd = String(today.getDate()).padStart(2, '0');
 
   dateInput.min = `${yyyy}-${mm}-${dd}`;
