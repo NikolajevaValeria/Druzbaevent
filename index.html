@@ -3,408 +3,611 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Družba Event Room — зал для праздников в Силламяэ</title>
-  <meta name="description" content="Družba Event Room — уютное пространство для дней рождения, семейных праздников, детских мероприятий и фотосессий в Силламяэ.">
+  <title>Družba Event Room -- зал для праздников в Силламяэ</title>
+  <meta name="description" content="Družba Event Room -- уютное пространство для праздников и мероприятий в Силламяэ. До 30 гостей, 35 € в час.">
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    :root{
+      --bg:#f8f5f0;
+      --card:#fff;
+      --text:#252321;
+      --muted:#77716b;
+      --accent:#9b5c45;
+      --accent-dark:#774333;
+      --line:#e8e1da;
+      --dark:#252321;
+      --max:1180px;
+      --radius:22px;
+      --shadow:0 15px 45px rgba(42,31,25,.08);
     }
-    html {
-      scroll-behavior: smooth;
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0
     }
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: #3d302b;
-      background: #f7f3ee;
-      line-height: 1.6;
+    html{
+      scroll-behavior:smooth
     }
-    img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.6;
     }
-    a {
-      color: inherit;
-      text-decoration: none;
+    img{
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
     }
-    .container {
-      width: min(1120px, 92%);
-      margin: 0 auto;
+    a{
+      text-decoration:none;
+      color:inherit
     }
-    /* HEADER */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(61, 48, 43, 0.08);
+    button,input,select,textarea{
+      font:inherit
     }
-    .nav {
-      min-height: 74px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
+    .container{
+      width:min(92%,var(--max));
+      margin:auto;
     }
-    .logo {
-      font-size: 25px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      color: #6f4e43;
+    .section{
+      padding:90px 0
     }
-    .logo span {
-      font-weight: 400;
+    .eyebrow{
+      display:inline-block;
+      margin-bottom:12px;
+      color:var(--accent);
+      font-size:.8rem;
+      font-weight:700;
+      letter-spacing:.14em;
+      text-transform:uppercase;
     }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 26px;
-      list-style: none;
+    h1,h2,h3{
+      line-height:1.15
     }
-    .nav-links a {
-      font-size: 15px;
-      transition: 0.2s;
+    h1{
+      font-size:clamp(2.7rem,6vw,5.4rem);
+      letter-spacing:-.04em;
     }
-    .nav-links a:hover {
-      color: #9a6c5d;
+    h2{
+      font-size:clamp(2rem,4vw,3.3rem);
+      letter-spacing:-.03em;
     }
-    .menu-btn {
-      display: none;
-      border: 0;
-      background: none;
-      font-size: 28px;
-      cursor: pointer;
-      color: #6f4e43;
+    h3{
+      font-size:1.3rem
     }
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      padding: 140px 0 80px;
-      display: flex;
-      align-items: center;
-      position: relative;
+    .lead{
+      font-size:1.08rem;
+      color:var(--muted);
+      max-width:650px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      min-height:50px;
+      padding:0 22px;
+      border-radius:999px;
+      border:1px solid transparent;
+      font-weight:700;
+      cursor:pointer;
+      transition:.2s ease;
+    }
+    .btn-primary{
+      background:var(--accent);
+      color:#fff;
+    }
+    .btn-primary:hover{
+      background:var(--accent-dark);
+      transform:translateY(-1px);
+    }
+    .btn-light{
+      background:#fff;
+      color:var(--text);
+    }
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(248,245,240,.94);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(232,225,218,.8);
+    }
+    .nav{
+      min-height:76px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+    .logo{
+      font-weight:800;
+      font-size:1.15rem;
+      letter-spacing:-.02em;
+    }
+    .logo span{
+      color:var(--accent)
+    }
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:28px;
+      font-size:.95rem;
+    }
+    .nav-links a:hover{
+      color:var(--accent)
+    }
+    .menu-btn{
+      display:none;
+      border:0;
+      background:none;
+      font-size:1.8rem;
+      cursor:pointer;
+    }
+    .hero{
+      min-height:calc(100vh - 76px);
+      display:grid;
+      place-items:center;
+      position:relative;
+      overflow:hidden;
       background:
-        linear-gradient(rgba(40, 30, 25, 0.34), rgba(40, 30, 25, 0.34)),
-        url("E8CE3532-DD78-420D-B391-ABA7753A9D2F.jpeg") center/cover no-repeat;
+        linear-gradient(90deg,rgba(26,20,17,.76),rgba(26,20,17,.28)),
+        url("E8CE3532-DD78-420D-B391-ABA7753A9D2F.jpeg") center/cover;
+      color:#fff;
     }
-    .hero-content {
-      max-width: 680px;
-      color: white;
+    .hero-inner{
+      width:min(92%,var(--max));
+      padding:100px 0;
     }
-    .hero-label {
-      display: inline-block;
-      margin-bottom: 18px;
-      padding: 7px 14px;
-      border-radius: 30px;
-      background: rgba(255, 255, 255, 0.18);
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      font-size: 14px;
+    .hero-copy{
+      max-width:780px
     }
-    .hero h1 {
-      font-size: clamp(42px, 7vw, 76px);
-      line-height: 1.05;
-      margin-bottom: 22px;
+    .hero .eyebrow{
+      color:#f2c7b5
     }
-    .hero p {
-      max-width: 600px;
-      font-size: 19px;
-      margin-bottom: 32px;
+    .hero p{
+      max-width:650px;
+      margin:24px 0 30px;
+      font-size:1.12rem;
+      color:#f5eeea;
     }
-    .btn {
-      display: inline-block;
-      padding: 14px 24px;
-      border-radius: 12px;
-      background: #9a6c5d;
-      color: white;
-      font-weight: 700;
-      border: none;
-      cursor: pointer;
-      transition: 0.25s;
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
     }
-    .btn:hover {
-      background: #805647;
-      transform: translateY(-2px);
+    .hero-note{
+      margin-top:28px;
+      font-size:.9rem;
+      color:#e8ded8;
     }
-    .btn-light {
-      background: white;
-      color: #6f4e43;
-      margin-left: 10px;
+    .price-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin:0 0 20px;
+      padding:10px 17px;
+      border-radius:999px;
+      background:rgba(255,255,255,.15);
+      border:1px solid rgba(255,255,255,.25);
+      font-weight:700;
     }
-    .btn-light:hover {
-      background: #f5eee8;
+    .info-strip{
+      background:var(--dark);
+      color:#fff;
     }
-    /* SECTIONS */
-    section {
-      padding: 90px 0;
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
     }
-    .section-title {
-      text-align: center;
-      margin-bottom: 48px;
+    .info-item{
+      padding:26px 20px;
+      border-right:1px solid rgba(255,255,255,.12);
     }
-    .section-title h2 {
-      font-size: clamp(32px, 5vw, 48px);
-      margin-bottom: 12px;
-      color: #513b34;
+    .info-item:last-child{
+      border-right:0
     }
-    .section-title p {
-      max-width: 650px;
-      margin: 0 auto;
-      color: #756761;
+    .info-item strong{
+      display:block;
+      margin-bottom:4px;
     }
-    /* ABOUT */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: center;
+    .info-item span{
+      font-size:.9rem;
+      color:#cfc7c2;
     }
-    .about-image {
-      height: 520px;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 20px 50px rgba(50, 35, 28, 0.13);
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      gap:30px;
+      align-items:end;
+      margin-bottom:45px;
     }
-    .about-text h3 {
-      font-size: 30px;
-      margin-bottom: 20px;
-      color: #513b34;
+    .section-head .lead{
+      max-width:520px
     }
-    .about-text p {
-      margin-bottom: 18px;
-      color: #6d5d56;
+    .about-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:55px;
+      align-items:center;
     }
-    .features {
-      margin-top: 25px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
+    .about-image{
+      height:570px;
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:var(--shadow);
     }
-    .feature {
-      background: #fff;
-      border-radius: 14px;
-      padding: 17px;
-      box-shadow: 0 8px 25px rgba(50, 35, 28, 0.06);
+    .about-copy p{
+      color:var(--muted);
+      margin:18px 0;
     }
-    .feature strong {
-      display: block;
-      margin-bottom: 4px;
-      color: #6f4e43;
+    .checks{
+      list-style:none;
+      display:grid;
+      gap:13px;
+      margin:25px 0;
     }
-    /* ZONES */
-    .zones {
-      background: #eee6de;
+    .checks li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
     }
-    .zones-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+    .checks li::before{
+      content:"✓";
+      color:var(--accent);
+      font-weight:800;
     }
-    .zone-card {
-      background: white;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 12px 30px rgba(50, 35, 28, 0.08);
+    .zones{
+      background:#fff
     }
-    .zone-image {
-      height: 290px;
+    .zone-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
     }
-    .zone-content {
-      padding: 23px;
+    .zone-card{
+      background:var(--bg);
+      border-radius:var(--radius);
+      overflow:hidden;
     }
-    .zone-content h3 {
-      font-size: 22px;
-      margin-bottom: 9px;
-      color: #513b34;
+    .zone-image{
+      height:260px
     }
-    .zone-content p {
-      color: #756761;
+    .zone-content{
+      padding:24px
     }
-    /* GALLERY */
-    .gallery-grid {
-      columns: 4 220px;
-      column-gap: 14px;
+    .zone-content p{
+      color:var(--muted);
+      margin-top:10px;
     }
-    .gallery-item {
-      height: 260px;
-      margin-bottom: 14px;
-      break-inside: avoid;
-      overflow: hidden;
-      border-radius: 15px;
-      background: #ddd;
+    .amenities-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
     }
-    .gallery-item.tall {
-      height: 360px;
+    .amenity{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:24px;
     }
-    .gallery-item img {
-      transition: transform 0.45s ease;
+    .amenity-icon{
+      font-size:1.6rem;
+      margin-bottom:12px;
     }
-    .gallery-item:hover img {
-      transform: scale(1.04);
+    .amenity p{
+      margin-top:7px;
+      color:var(--muted);
+      font-size:.95rem;
     }
-    /* PRICE */
-    .price-section {
-      background: #fff;
+    .pricing{
+      background:#fff;
     }
-    .price-box {
-      max-width: 720px;
-      margin: 0 auto;
-      background: #f5eee8;
-      border-radius: 25px;
-      padding: 42px;
-      text-align: center;
+    .pricing-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
     }
-    .price {
-      font-size: 52px;
-      font-weight: 700;
-      color: #6f4e43;
-      margin: 10px 0;
+    .price-card{
+      background:var(--bg);
+      border-radius:var(--radius);
+      padding:32px;
+      border:1px solid var(--line);
     }
-    .price-note {
-      color: #756761;
-      margin-bottom: 25px;
+    .price-card.featured{
+      background:var(--dark);
+      color:#fff;
+      border-color:var(--dark);
     }
-    /* CONTACT */
-    .contact {
-      background: #513b34;
-      color: white;
+    .price{
+      font-size:2.8rem;
+      font-weight:800;
+      line-height:1;
+      margin:12px 0 20px;
     }
-    .contact .section-title h2,
-    .contact .section-title p {
-      color: white;
+    .price small{
+      font-size:1rem;
+      font-weight:400;
+      opacity:.7;
     }
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: start;
+    .feature-list{
+      list-style:none;
+      display:grid;
+      gap:13px;
     }
-    .contact-info {
-      display: grid;
-      gap: 20px;
+    .feature-list li{
+      display:flex;
+      gap:10px;
     }
-    .contact-item {
-      padding: 20px;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.08);
+    .feature-list li::before{
+      content:"✓";
+      color:var(--accent);
+      font-weight:800;
     }
-    .contact-item strong {
-      display: block;
-      margin-bottom: 5px;
+    .featured .feature-list li::before{
+      color:#f0bda8;
     }
-    form {
-      background: white;
-      color: #3d302b;
-      border-radius: 20px;
-      padding: 28px;
+    .extra-list{
+      list-style:none;
+      display:grid;
+      gap:14px;
+      margin-top:15px;
     }
-    .form-group {
-      margin-bottom: 16px;
+    .extra-list li{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      padding:14px 0;
+      border-bottom:1px solid var(--line);
     }
-    label {
-      display: block;
-      margin-bottom: 6px;
-      font-size: 14px;
-      font-weight: 700;
+    .extra-list li:last-child{
+      border-bottom:0
     }
-    input,
-    textarea,
-    select {
-      width: 100%;
-      padding: 13px 14px;
-      border: 1px solid #ddd2ca;
-      border-radius: 10px;
-      font: inherit;
-      background: white;
-      color: #3d302b;
+    .extra-price{
+      font-weight:800;
+      white-space:nowrap;
+      color:var(--accent);
     }
-    textarea {
-      min-height: 110px;
-      resize: vertical;
+    .booking-info{
+      margin-top:25px;
+      padding:18px;
+      border-radius:15px;
+      background:rgba(155,92,69,.08);
     }
-    form .btn {
-      width: 100%;
-      margin: 5px 0 0;
+    .ideas{
+      background:#ede6df
     }
-    /* FOOTER */
-    footer {
-      background: #342621;
-      color: #ddd1ca;
-      padding: 28px 0;
-      text-align: center;
-      font-size: 14px;
+    .idea-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
     }
-    .socials {
-      margin-top: 10px;
-      display: flex;
-      justify-content: center;
-      gap: 18px;
+    .idea{
+      padding:28px;
+      background:#fff;
+      border-radius:18px;
     }
-    .socials a:hover {
-      color: white;
+    .idea p{
+      color:var(--muted);
+      margin-top:8px;
     }
-    /* MOBILE */
-    @media (max-width: 800px) {
-      .nav {
-        min-height: 65px;
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr;
+      grid-auto-rows:260px;
+      gap:14px;
+    }
+    .gallery-item{
+      overflow:hidden;
+      border-radius:18px;
+    }
+    .gallery-item:first-child{
+      grid-row:span 2;
+    }
+    .gallery-item img{
+      transition:transform .4s ease;
+    }
+    .gallery-item:hover img{
+      transform:scale(1.04);
+    }
+    .booking{
+      background:var(--dark);
+      color:#fff;
+    }
+    .booking-grid{
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:60px;
+      align-items:start;
+    }
+    .booking .lead{
+      color:#cfc7c2
+    }
+    .contact-list{
+      list-style:none;
+      display:grid;
+      gap:17px;
+      margin-top:30px;
+    }
+    .contact-list a:hover{
+      color:#f0bda8
+    }
+    .socials{
+      display:flex;
+      gap:10px;
+      margin-top:24px;
+    }
+    .socials a{
+      border:1px solid rgba(255,255,255,.2);
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:.9rem;
+    }
+    .form{
+      background:#fff;
+      color:var(--text);
+      padding:30px;
+      border-radius:24px;
+    }
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+    .field{
+      display:grid;
+      gap:7px;
+    }
+    .field.full{
+      grid-column:1/-1
+    }
+    label{
+      font-size:.88rem;
+      font-weight:700;
+    }
+    input,select,textarea{
+      width:100%;
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:13px 14px;
+      outline:none;
+      background:#fff;
+      color:var(--text);
+    }
+    input:focus,select:focus,textarea:focus{
+      border-color:var(--accent);
+      box-shadow:0 0 0 3px rgba(155,92,69,.1);
+    }
+    textarea{
+      min-height:120px;
+      resize:vertical;
+    }
+    .form .btn{
+      width:100%;
+      margin-top:5px;
+    }
+    .privacy{
+      font-size:.78rem;
+      color:var(--muted);
+      margin-top:10px;
+    }
+    footer{
+      background:#1d1b1a;
+      color:#cfc7c2;
+      padding:28px 0;
+    }
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      align-items:center;
+      font-size:.9rem;
+    }
+    .footer-inner a:hover{
+      color:#fff
+    }
+    @media(max-width:900px){
+      .nav-links{
+        position:absolute;
+        top:76px;
+        left:0;
+        right:0;
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+        background:var(--bg);
+        border-bottom:1px solid var(--line);
+        padding:10px 4%;
       }
-      .menu-btn {
-        display: block;
+      .nav-links.open{
+        display:flex
       }
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 65px;
-        left: 0;
-        width: 100%;
-        padding: 20px;
-        background: white;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 17px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      .nav-links a{
+        padding:13px 0
       }
-      .nav-links.active {
-        display: flex;
+      .nav-links .btn{
+        margin:8px 0 14px;
       }
-      .hero {
-        min-height: 90vh;
-        padding-top: 120px;
+      .menu-btn{
+        display:block
       }
-      .hero p {
-        font-size: 17px;
+      .info-grid{
+        grid-template-columns:1fr 1fr
       }
-      .btn {
-        display: block;
-        width: 100%;
-        text-align: center;
+      .info-item:nth-child(2){
+        border-right:0
       }
-      .btn-light {
-        margin: 10px 0 0;
+      .info-item:nth-child(-n+2){
+        border-bottom:1px solid rgba(255,255,255,.12);
       }
       .about-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
+      .booking-grid{
+        grid-template-columns:1fr;
       }
-      .about-image {
-        height: 380px;
+      .about-image{
+        height:430px
       }
-      .zones-grid {
-        grid-template-columns: 1fr;
+      .zone-grid,
+      .amenities-grid,
+      .pricing-grid{
+        grid-template-columns:1fr 1fr;
       }
-      .features {
-        grid-template-columns: 1fr;
+      .section-head{
+        align-items:start;
+        flex-direction:column;
       }
-      section {
-        padding: 65px 0;
+    }
+    @media(max-width:620px){
+      .section{
+        padding:65px 0
       }
-      .price-box {
-        padding: 30px 20px;
+      .hero{
+        min-height:calc(100vh - 76px);
+      }
+      .hero-inner{
+        padding:70px 0
+      }
+      .hero-actions{
+        flex-direction:column;
+        align-items:stretch;
+      }
+      .hero-actions .btn{
+        width:100%
+      }
+      .info-grid,
+      .zone-grid,
+      .amenities-grid,
+      .pricing-grid,
+      .idea-grid,
+      .form-grid{
+        grid-template-columns:1fr;
+      }
+      .field.full{
+        grid-column:auto
+      }
+      .info-item{
+        border-right:0!important;
+        border-bottom:1px solid rgba(255,255,255,.12);
+      }
+      .info-item:last-child{
+        border-bottom:0
+      }
+      .gallery-grid{
+        grid-template-columns:1fr 1fr;
+        grid-auto-rows:160px;
+      }
+      .gallery-item:first-child{
+        grid-column:1/-1;
+        grid-row:auto;
+      }
+      .about-image{
+        height:350px
+      }
+      .footer-inner{
+        flex-direction:column;
+        align-items:flex-start;
       }
     }
   </style>
@@ -412,377 +615,597 @@
 <body>
 <header>
   <div class="container nav">
-    <a href="#home" class="logo">Družba <span>Event Room</span></a>
-<button class="menu-btn" id="menuBtn" aria-label="Открыть меню">☰</button>
-<ul class="nav-links" id="navLinks">
-  <li><a href="#about">О нас</a></li>
-  <li><a href="#zones">Пространство</a></li>
-  <li><a href="#gallery">Фотографии</a></li>
-  <li><a href="#price">Цена</a></li>
-  <li><a href="#contact">Контакты</a></li>
-</ul>
+    <a class="logo" href="#top">
+      Družba <span>Event Room</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">О нас</a>
+      <a href="#pricing">Цены</a>
+      <a href="#amenities">Удобства</a>
+      <a href="#gallery">Галерея</a>
+      <a href="#contacts">Контакты</a>
+      <a class="btn btn-primary" href="#booking">
+        Забронировать
+      </a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Открыть меню">
+      ☰
+    </button>
   </div>
 </header>
-<main>
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="container">
-    <div class="hero-content">
-  <div class="hero-label">
-    Пространство для ваших особенных моментов
-  </div>
-  <h1>Družba Event Room</h1>
-  <p>
-    Уютный зал в Силламяэ для дней рождения, семейных праздников,
-    детских мероприятий, встреч и фотосессий.
-  </p>
-  <a href="#contact" class="btn">Забронировать зал</a>
-  <a href="#gallery" class="btn btn-light">Посмотреть фото</a>
-</div>
-  </div>
-</section>
-<!-- ABOUT -->
-<section id="about">
-  <div class="container">
-<div class="section-title">
-  <h2>Место, где создаются воспоминания</h2>
-  <p>
-    Мы создали уютное пространство, в котором приятно проводить
-    время с семьёй, друзьями и близкими.
-  </p>
-</div>
-<div class="about-grid">
-  <div class="about-image">
-    <img src="IMG_7589.jpeg" alt="Пространство Družba Event Room">
-  </div>
-  <div class="about-text">
-    <h3>Всё готово для вашего праздника</h3>
-    <p>
-      Družba Event Room — это красивое и уютное пространство,
-      которое можно адаптировать под разные форматы мероприятий.
-    </p>
-    <p>
-      Здесь можно отметить день рождения, устроить детский праздник,
-      семейную встречу, девичник, фотосессию или просто провести
-      хороший вечер в приятной атмосфере.
-    </p>
-    <div class="features">
-      <div class="feature">
-        <strong>Уютная атмосфера</strong>
-        Пространство создано для комфортного отдыха.
-      </div>
-      <div class="feature">
-        <strong>Для разных событий</strong>
-        Праздники, встречи, дни рождения и фотосессии.
-      </div>
-      <div class="feature">
-        <strong>Красивый интерьер</strong>
-        Место, которое хочется фотографировать.
-      </div>
-      <div class="feature">
-        <strong>Удобное расположение</strong>
-        Sillamäe, Kesk 19.
+<main id="top">
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="price-badge">
+          🎉 Аренда от 35 € / час
+        </div>
+        <span class="eyebrow">
+          Sillamäe · Kesk 19
+        </span>
+        <h1>
+          Место, где праздник становится воспоминанием
+        </h1>
+        <p>
+          Уютное пространство для дней рождения, семейных праздников,
+          детских мероприятий, встреч и других событий.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#booking">
+            Оставить заявку
+          </a>
+          <a class="btn btn-light" href="tel:+37258387675">
+            +372 5838 7675
+          </a>
+        </div>
+        <div class="hero-note">
+          До 30 гостей · Без минимального времени аренды · Работаем по бронированию
+        </div>
       </div>
     </div>
-  </div>
-</div>
-  </div>
-</section>
-<!-- ZONES -->
-<section class="zones" id="zones">
-  <div class="container">
-<div class="section-title">
-  <h2>Наше пространство</h2>
-  <p>
-    Несколько зон, чтобы каждый гость чувствовал себя комфортно.
-  </p>
-</div>
-<div class="zones-grid">
-  <article class="zone-card">
-    <div class="zone-image">
-      <img src="IMG_8002.jpeg" alt="Зона отдыха">
+  </section>
+  <section class="info-strip">
+    <div class="container info-grid">
+      <div class="info-item">
+        <strong>💶 Стоимость</strong>
+        <span>35 € / час</span>
+      </div>
+      <div class="info-item">
+        <strong>👥 Вместимость</strong>
+        <span>До 30 гостей</span>
+      </div>
+      <div class="info-item">
+        <strong>📅 Бронирование</strong>
+        <span>Предоплата 30 €</span>
+      </div>
+      <div class="info-item">
+        <strong>📍 Адрес</strong>
+        <span>Kesk 19, Sillamäe</span>
+      </div>
     </div>
-    <div class="zone-content">
-      <h3>Зона отдыха</h3>
-      <p>
-        Уютное место для общения, отдыха и праздничного стола.
-      </p>
+  </section>
+  <section class="section" id="about">
+    <div class="container about-grid">
+      <div class="about-image">
+        <img
+          src="IMG_7589.jpeg"
+          alt="Пространство Družba Event Room">
+      </div>
+      <div class="about-copy">
+        <span class="eyebrow">
+          О пространстве
+        </span>
+        <h2>
+          Всё готово для вашего праздника
+        </h2>
+        <p>
+          Družba Event Room -- уютное пространство в Силламяэ,
+          где можно провести праздник в кругу семьи, друзей или коллег.
+        </p>
+        <p>
+          Помещение уже подготовлено для мероприятия.
+          Вам остаётся пригласить гостей и наслаждаться праздником.
+        </p>
+        <ul class="checks">
+          <li>До 30 гостей</li>
+          <li>Готовое помещение для мероприятия</li>
+          <li>Посуда уже входит в аренду</li>
+          <li>Музыка и колонка</li>
+          <li>Можно приносить свою еду</li>
+          <li>Различные игрушки для детей</li>
+          <li>Минимального времени аренды нет</li>
+        </ul>
+        <a class="btn btn-primary" href="#booking">
+          Узнать о свободной дате
+        </a>
+      </div>
     </div>
-  </article>
-  <article class="zone-card">
-    <div class="zone-image">
-      <img src="IMG_9170.jpeg" alt="Праздничная зона">
+  </section>
+  <section class="section pricing" id="pricing">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">
+            Стоимость
+          </span>
+          <h2>
+            Просто и понятно
+          </h2>
+        </div>
+        <p class="lead">
+          Выбирайте только то, что нужно именно для вашего праздника.
+        </p>
+      </div>
+      <div class="pricing-grid">
+        <div class="price-card featured">
+          <span class="eyebrow" style="color:#f0bda8">
+            Основная аренда
+          </span>
+          <div class="price">
+            35 € <small>/ час</small>
+          </div>
+          <ul class="feature-list">
+            <li>Готовое помещение</li>
+            <li>До 30 гостей</li>
+            <li>Посуда</li>
+            <li>Музыка и колонка</li>
+            <li>Чайник</li>
+            <li>Кофеварка</li>
+            <li>Микроволновка</li>
+            <li>Можно приносить свою еду</li>
+            <li>Различные игрушки</li>
+            <li>Без минимального времени аренды</li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <span class="eyebrow">
+            Дополнительно
+          </span>
+          <h3>
+            Сделайте праздник особенным
+          </h3>
+          <ul class="extra-list">
+            <li>
+              <span>
+                📸 Оформление фотозоны в нужной тематике
+              </span>
+              <span class="extra-price">
+                20 €
+              </span>
+            </li>
+            <li>
+              <span>
+                🍭 Сладкая вата
+              </span>
+              <span class="extra-price">
+                1 € / шт.
+              </span>
+            </li>
+          </ul>
+          <div class="booking-info">
+            <strong>📅 Бронирование</strong><br>
+            Для подтверждения даты необходима предоплата
+            <strong>30 €</strong>.
+            Работаем по предварительному бронированию.
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="zone-content">
-      <h3>Праздничная зона</h3>
-      <p>
-        Пространство для праздников, встреч и красивых фотографий.
-      </p>
+  </section>
+  <section class="section zones">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">
+            Для любого повода
+          </span>
+          <h2>
+            Создайте свой праздник
+          </h2>
+        </div>
+        <p class="lead">
+          Пространство можно адаптировать под формат вашего мероприятия.
+        </p>
+      </div>
+      <div class="zone-grid">
+        <article class="zone-card">
+          <div class="zone-image">
+            <img
+              src="IMG_8002.jpeg"
+              alt="День рождения">
+          </div>
+          <div class="zone-content">
+            <h3>
+              🎂 День рождения
+            </h3>
+            <p>
+              Соберите близких и проведите праздник в уютной атмосфере.
+            </p>
+          </div>
+        </article>
+        <article class="zone-card">
+          <div class="zone-image">
+            <img
+              src="IMG_9170.jpeg"
+              alt="Детский праздник">
+          </div>
+          <div class="zone-content">
+            <h3>
+              🧸 Детский праздник
+            </h3>
+            <p>
+              Игрушки, сладкая вата, фотозона и место для весёлого праздника.
+            </p>
+          </div>
+        </article>
+        <article class="zone-card">
+          <div class="zone-image">
+            <img
+              src="IMG_7832.jpeg"
+              alt="Встреча друзей">
+          </div>
+          <div class="zone-content">
+            <h3>
+              🥂 Встреча друзей
+            </h3>
+            <p>
+              Удобное пространство для дружеских встреч и небольших мероприятий.
+            </p>
+          </div>
+        </article>
+      </div>
     </div>
-  </article>
-  <article class="zone-card">
-    <div class="zone-image">
-      <img src="IMG_7832.jpeg" alt="Детская зона">
+  </section>
+  <section class="section" id="amenities">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">
+            Что есть в помещении
+          </span>
+          <h2>
+            Всё необходимое уже на месте
+          </h2>
+        </div>
+      </div>
+      <div class="amenities-grid">
+        <div class="amenity">
+          <div class="amenity-icon">🍽️</div>
+          <h3>Посуда</h3>
+          <p>Посуда уже входит в стоимость аренды.</p>
+        </div>
+        <div class="amenity">
+          <div class="amenity-icon">🎵</div>
+          <h3>Музыка</h3>
+          <p>Есть колонка для музыки и создания атмосферы.</p>
+        </div>
+        <div class="amenity">
+          <div class="amenity-icon">☕</div>
+          <h3>Кофеварка</h3>
+          <p>Можно приготовить кофе для гостей.</p>
+        </div>
+        <div class="amenity">
+          <div class="amenity-icon">🫖</div>
+          <h3>Чайник</h3>
+          <p>Всё необходимое для горячих напитков.</p>
+        </div>
+        <div class="amenity">
+          <div class="amenity-icon">🍿</div>
+          <h3>Микроволновка</h3>
+          <p>Можно разогреть принесённые блюда.</p>
+        </div>
+        <div class="amenity">
+          <div class="amenity-icon">🧸</div>
+          <h3>Игрушки</h3>
+          <p>Различные игрушки для маленьких гостей.</p>
+        </div>
+      </div>
     </div>
-    <div class="zone-content">
-      <h3>Для детей</h3>
-      <p>
-        Место, где маленьким гостям будет интересно и комфортно.
-      </p>
+  </section>
+  <section class="section ideas">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">
+            Идеи
+          </span>
+          <h2>
+            Для какого события?
+          </h2>
+        </div>
+      </div>
+      <div class="idea-grid">
+        <div class="idea">
+          <h3>🎂 День рождения</h3>
+          <p>Красивый праздник для друзей и семьи.</p>
+        </div>
+        <div class="idea">
+          <h3>🧸 Детский праздник</h3>
+          <p>Игрушки, сладкая вата и тематическая фотозона.</p>
+        </div>
+        <div class="idea">
+          <h3>👨‍👩‍👧 Семейный праздник</h3>
+          <p>Юбилей, семейная встреча или другой важный повод.</p>
+        </div>
+        <div class="idea">
+          <h3>🥂 Встреча друзей</h3>
+          <p>Уютная атмосфера для общения и отдыха.</p>
+        </div>
+      </div>
     </div>
-  </article>
-</div>
-  </div>
-</section>
-<!-- GALLERY -->
-<section id="gallery">
-  <div class="container">
-<div class="section-title">
-  <h2>Фотографии</h2>
-  <p>
-    Посмотрите, как выглядит Družba Event Room.
-  </p>
-</div>
-<div class="gallery-grid">
-  <div class="gallery-item tall">
-    <img src="D90F0E72-355E-4CA9-9C12-FEA05CA5AD3B.jpeg" alt="Družba Event Room">
-  </div>
-  <div class="gallery-item">
-    <img src="E8CE3532-DD78-420D-B391-ABA7753A9D2F.jpeg" alt="Družba Event Room">
-  </div>
-  <div class="gallery-item">
-    <img src="IMG_7475.jpeg" alt="Družba Event Room">
-  </div>
-  <div class="gallery-item tall">
-    <img src="IMG_7566.jpeg" alt="Družba Event Room">
-  </div>
-  <div class="gallery-item">
-    <img src="IMG_7579.jpeg" alt="Družba Event Room">
-  </div>
-  <div class="gallery-item">
-    <img src="IMG_7589.jpeg" alt="Družba Event Room">
-  </div>
-  <div class="gallery-item tall">
-    <img src="IMG_7826.jpeg" alt="Družba Event Room">
-  </div>
-  <div class="gallery-item">
-    <img src="IMG_7830.jpeg" alt="Družba Event Room">
-  </div>
-  <div class="gallery-item tall">
-    <img src="IMG_7832.jpeg" alt="Družba Event Room">
-  </div>
-  <div class="gallery-item">
-    <img src="IMG_7912.jpeg" alt="Družba Event Room">
-  </div>
-  <div class="gallery-item tall">
-    <img src="IMG_8002.jpeg" alt="Družба Event Room">
-  </div>
-  <div class="gallery-item">
-    <img src="IMG_8134.jpeg" alt="Družba Event Room">
-  </div>
-  <div class="gallery-item tall">
-    <img src="IMG_8247.jpeg" alt="Družba Event Room">
-  </div>
-  <div class="gallery-item">
-    <img src="IMG_8253.jpeg" alt="Družba Event Room">
-  </div>
-  <div class="gallery-item">
-    <img src="IMG_8266.jpeg" alt="Družba Event Room">
-  </div>
-  <div class="gallery-item tall">
-    <img src="IMG_8514.jpeg" alt="Družba Event Room">
-  </div>
-  <div class="gallery-item">
-    <img src="IMG_8515.jpeg" alt="Družба Event Room">
-  </div>
-  <div class="gallery-item">
-    <img src="IMG_8516.jpeg" alt="Družба Event Room">
-  </div>
-  <div class="gallery-item tall">
-    <img src="IMG_8518.jpeg" alt="Družба Event Room">
-  </div>
-  <div class="gallery-item">
-    <img src="IMG_8519.jpeg" alt="Družба Event Room">
-  </div>
-  <div class="gallery-item">
-    <img src="IMG_8520.jpeg" alt="Družба Event Room">
-  </div>
-  <div class="gallery-item tall">
-    <img src="IMG_8522.jpeg" alt="Družба Event Room">
-  </div>
-  <div class="gallery-item">
-    <img src="IMG_8523.jpeg" alt="Družба Event Room">
-  </div>
-  <div class="gallery-item tall">
-    <img src="IMG_8593.jpeg" alt="Družba Event Room">
-  </div>
-  <div class="gallery-item">
-    <img src="IMG_8612.jpeg" alt="Družba Event Room">
-  </div>
-  <div class="gallery-item tall">
-    <img src="IMG_8649.jpeg" alt="Družba Event Room">
-  </div>
-  <div class="gallery-item">
-    <img src="IMG_9126.jpeg" alt="Družba Event Room">
-  </div>
-  <div class="gallery-item tall">
-    <img src="IMG_9146.jpeg" alt="Družba Event Room">
-  </div>
-  <div class="gallery-item">
-    <img src="IMG_9157.jpeg" alt="Družba Event Room">
-  </div>
-  <div class="gallery-item tall">
-    <img src="IMG_9170.jpeg" alt="Družba Event Room">
-  </div>
-</div>
-  </div>
-</section>
-<!-- PRICE -->
-<section class="price-section" id="price">
-  <div class="container">
-<div class="section-title">
-  <h2>Стоимость</h2>
-  <p>
-    Простые условия без лишних сложностей.
-  </p>
-</div>
-<div class="price-box">
-  <div>Аренда пространства</div>
-  <div class="price">
-    25 €
-  </div>
-  <div class="price-note">
-    за час
-  </div>
-  <p>
-    Для уточнения свободных дат, времени и дополнительных условий
-    свяжитесь с нами.
-  </p>
-  <a href="#contact" class="btn">
-    Узнать о свободных датах
-  </a>
-</div>
-  </div>
-</section>
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="container">
-<div class="section-title">
-  <h2>Забронировать зал</h2>
-  <p>
-    Напишите нам — мы ответим и поможем подобрать удобную дату.
-  </p>
-</div>
-<div class="contact-grid">
-  <div class="contact-info">
-    <div class="contact-item">
-      <strong>📍 Адрес</strong>
-      Kesk 19, Sillamäe
+  </section>
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">
+            Галерея
+          </span>
+          <h2>
+            Атмосфера Družba
+          </h2>
+        </div>
+        <p class="lead">
+          Фотографии нашего пространства.
+        </p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="D90F0E72-355E-4CA9-9C12-FEA05CA5AD3B.jpeg" alt="Družba Event Room">
+        </div>
+        <div class="gallery-item">
+          <img src="E8CE3532-DD78-420D-B391-ABA7753A9D2F.jpeg" alt="Družba Event Room">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_7475.jpeg" alt="Družba Event Room">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_7566.jpeg" alt="Družba Event Room">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_7579.jpeg" alt="Družba Event Room">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_7589.jpeg" alt="Družba Event Room">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_7826.jpeg" alt="Družba Event Room">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_7830.jpeg" alt="Družba Event Room">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_7832.jpeg" alt="Družба Event Room">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_7912.jpeg" alt="Družba Event Room">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_8002.jpeg" alt="Družba Event Room">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_8134.jpeg" alt="Družba Event Room">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_8247.jpeg" alt="Družba Event Room">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_8253.jpeg" alt="Družba Event Room">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_8266.jpeg" alt="Družba Event Room">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_8514.jpeg" alt="Družba Event Room">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_8515.jpeg" alt="Družба Event Room">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_8516.jpeg" alt="Družба Event Room">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_8518.jpeg" alt="Družба Event Room">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_8519.jpeg" alt="Družба Event Room">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_8520.jpeg" alt="Družба Event Room">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_8522.jpeg" alt="Družба Event Room">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_8523.jpeg" alt="Družба Event Room">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_8593.jpeg" alt="Družba Event Room">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_8612.jpeg" alt="Družba Event Room">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_8649.jpeg" alt="Družба Event Room">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_9126.jpeg" alt="Družба Event Room">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_9146.jpeg" alt="Družба Event Room">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_9157.jpeg" alt="Družба Event Room">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_9170.jpeg" alt="Družба Event Room">
+        </div>
+      </div>
     </div>
-    <div class="contact-item">
-      <strong>📞 Телефон</strong>
+  </section>
+  <section class="section booking" id="booking">
+    <div class="container booking-grid">
+      <div id="contacts">
+        <span class="eyebrow">
+          Бронирование
+        </span>
+        <h2>
+          Расскажите о вашем празднике
+        </h2>
+        <p class="lead" style="margin-top:18px">
+          Заполните форму -- заявка отправится нам на почту.
+          После получения заявки мы свяжемся с вами и уточним детали.
+        </p>
+        <ul class="contact-list">
+          <li>
+            📞
+            <a href="tel:+37258387675">
+              +372 5838 7675
+            </a>
+          </li>
+          <li>
+            ✉️
+            <a href="mailto:andreevna499@gmail.com">
+              andreevna499@gmail.com
+            </a>
+          </li>
+          <li>
+            📍 Kesk 19, Sillamäe, Estonia
+          </li>
+        </ul>
+        <div class="socials">
+          <a href="https://www.instagram.com/druzba.event.room/" target="_blank" rel="noopener noreferrer">
+            Instagram
+          </a>
+          <a href="https://www.facebook.com/druzba.event.room/" target="_blank" rel="noopener noreferrer">
+            Facebook
+          </a>
+        </div>
+      </div>
+      <form
+        class="form"
+        action="https://formspree.io/f/xzedddnk"
+        method="POST">
+        <input
+          type="hidden"
+          name="_subject"
+          value="Новая заявка -- Družba Event Room">
+        <div class="form-grid">
+          <div class="field">
+            <label for="name">Ваше имя *</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Например, Анна"
+              required>
+          </div>
+          <div class="field">
+            <label for="phone">Телефон *</label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              placeholder="+372 ..."
+              required>
+          </div>
+          <div class="field">
+            <label for="date">Желаемая дата *</label>
+            <input
+              id="date"
+              name="date"
+              type="date"
+              required>
+          </div>
+          <div class="field">
+            <label for="guests">Количество гостей</label>
+            <input
+              id="guests"
+              name="guests"
+              type="number"
+              min="1"
+              max="30"
+              placeholder="До 30 человек">
+          </div>
+          <div class="field full">
+            <label for="event">Тип мероприятия</label>
+            <select id="event" name="event">
+              <option value="">Выберите вариант</option>
+              <option>День рождения</option>
+              <option>Детский праздник</option>
+              <option>Семейный праздник</option>
+              <option>Встреча друзей</option>
+              <option>Другое</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="extras">Дополнительные услуги</label>
+            <select id="extras" name="extras">
+              <option value="">Не нужны</option>
+              <option>Фотозона -- 20 €</option>
+              <option>Сладкая вата -- 1 € / шт.</option>
+              <option>Фотозона + сладкая вата</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="message">Комментарий</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Расскажите немного о вашем мероприятии..."></textarea>
+          </div>
+          <div class="field full">
+            <button
+              class="btn btn-primary"
+              type="submit">
+              Отправить заявку
+            </button>
+            <div class="privacy">
+              Для подтверждения бронирования необходима предоплата 30 €.
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="container footer-inner">
+    <div>
+      © <span id="year"></span> Družba Event Room
+    </div>
+    <div>
+      Kesk 19, Sillamäe ·
       <a href="tel:+37258387675">
         +372 5838 7675
       </a>
     </div>
-    <div class="contact-item">
-      <strong>✉️ Email</strong>
-      <a href="mailto:andreevna499@gmail.com">
-        andreevna499@gmail.com
-      </a>
-    </div>
-    <div class="contact-item">
-      <strong>📱 Социальные сети</strong>
-      <a href="https://www.instagram.com/" target="_blank">
-        Instagram
-      </a>
-      <br>
-      <a href="https://www.facebook.com/" target="_blank">
-        Facebook
-      </a>
-    </div>
-  </div>
-  <form
-    action="https://formspree.io/f/xzedddnk"
-    method="POST"
-  >
-    <div class="form-group">
-      <label for="name">Ваше имя</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        placeholder="Как к вам обращаться?"
-        required
-      >
-    </div>
-    <div class="form-group">
-      <label for="phone">Телефон</label>
-      <input
-        type="tel"
-        id="phone"
-        name="phone"
-        placeholder="+372 ..."
-        required
-      >
-    </div>
-    <div class="form-group">
-      <label for="date">Желаемая дата</label>
-      <input
-        type="date"
-        id="date"
-        name="date"
-        required
-      >
-    </div>
-    <div class="form-group">
-      <label for="message">Сообщение</label>
-      <textarea
-        id="message"
-        name="message"
-        placeholder="Расскажите немного о вашем мероприятии..."
-      ></textarea>
-    </div>
-    <button type="submit" class="btn">
-      Отправить заявку
-    </button>
-  </form>
-</div>
-  </div>
-</section>
-</main>
-<footer>
-  <div class="container">
-<div>
-  © 2026 Družba Event Room. Sillamäe
-</div>
-<div class="socials">
-  <a href="https://www.instagram.com/" target="_blank">
-    Instagram
-  </a>
-  <a href="https://www.facebook.com/" target="_blank">
-    Facebook
-  </a>
-</div>
   </div>
 </footer>
 <script>
-  const menuBtn = document.getElementById("menuBtn");
-  const navLinks = document.getElementById("navLinks");
-  menuBtn.addEventListener("click", function () {
-    navLinks.classList.toggle("active");
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
   });
-  document.querySelectorAll(".nav-links a").forEach(function (link) {
-    link.addEventListener("click", function () {
-      navLinks.classList.remove("active");
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
     });
   });
-  const dateInput = document.getElementById("date");
+  const dateInput = document.getElementById('date');
   const today = new Date();
-  const year = today.getFullYear();
-  const month = String(today.getMonth() + 1).padStart(2, "0");
-  const day = String(today.getDate()).padStart(2, "0");
-  dateInput.min = `${year}-${month}-${day}`;
+  const yyyy = today.getFullYear();
+  const mm = String(today.getMonth() + 1).padStart(2, '0');
+  const dd = String(today.getDate()).padStart(2, '0');
+  dateInput.min = `${yyyy}-${mm}-${dd}`;
+  document.getElementById('year').textContent =
+    new Date().getFullYear();
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      navLinks.classList.remove('open');
+    }
+  });
 </script>
 </body>
 </html>
